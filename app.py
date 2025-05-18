@@ -8,6 +8,9 @@ import cohere
 co = cohere.Client("yNiOGAbn3zaiuAFjVj3pwW8e6eZ2mjIJmf2VcgKh")
 
 def generate_answer(question, context):
+    max_context_length = 1000  # or a smaller number based on testing
+    if len(context) > max_context_length:
+        context = context[:max_context_length] + "..."
     prompt = f"Context: {context}\n\nQuestion: {question}\nAnswer:"
     
     response = co.generate(
@@ -19,6 +22,7 @@ def generate_answer(question, context):
         stop_sequences=["\n"]
     )
     return response.generations[0].text.strip()
+
 def extract_text_from_pdf(pdf_file):
     text = ""
     with fitz.open(stream=pdf_file.read(), filetype="pdf") as doc:
