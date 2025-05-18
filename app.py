@@ -7,7 +7,7 @@ import cohere
 
 
 
-cohere_api_key = ("yNiOGAbn3zaiuAFjVj3pwW8e6eZ2mjIJmf2VcgKh")
+cohere_api_key = st.secrets["COHERE_API_KEY"]
 
 co = cohere.Client(cohere_api_key)
 
