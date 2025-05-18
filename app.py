@@ -4,11 +4,10 @@ from sentence_transformers import SentenceTransformer
 import numpy as np
 import faiss
 import cohere
-from dotenv import dotenv
-import os
 
 
-cohere_api_key = os.getenv("COHERE_API_KEY")
+
+cohere_api_key = st.secrets("yNiOGAbn3zaiuAFjVj3pwW8e6eZ2mjIJmf2VcgKh")
 
 co = cohere.Client(cohere_api_key)
 
