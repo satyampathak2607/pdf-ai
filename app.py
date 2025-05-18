@@ -8,7 +8,7 @@ import cohere
 co = cohere.Client("yNiOGAbn3zaiuAFjVj3pwW8e6eZ2mjIJmf2VcgKh")
 
 def generate_answer(question, context):
-    max_context_length = 1000  # or a smaller number based on testing
+    max_context_length = 100  # or a smaller number based on testing
     if len(context) > max_context_length:
         context = context[:max_context_length] + "..."
     prompt = f"Context: {context}\n\nQuestion: {question}\nAnswer:"
