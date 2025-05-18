@@ -12,7 +12,7 @@ cohere_api_key = ("yNiOGAbn3zaiuAFjVj3pwW8e6eZ2mjIJmf2VcgKh")
 co = cohere.Client(cohere_api_key)
 
 def generate_answer(question, context):
-    max_context_length = 1000  # or a smaller number based on testing
+    max_context_length = 5000  
     if len(context) > max_context_length:
         context = context[:max_context_length] + "..."
     prompt = f"Context: {context}\n\nQuestion: {question}\nAnswer:"
@@ -20,7 +20,7 @@ def generate_answer(question, context):
     response = co.generate(
         model='command-light',
         prompt=prompt,
-        max_tokens=200,
+        max_tokens=300,
         temperature=0.5,
         k=0,
         stop_sequences=["\n"]
