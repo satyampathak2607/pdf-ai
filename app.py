@@ -16,7 +16,7 @@ def generate_answer(question, context):
     response = co.generate(
         model='command-light',
         prompt=prompt,
-        max_tokens=20,
+        max_tokens=200,
         temperature=0.5,
         k=0,
         stop_sequences=["\n"]
