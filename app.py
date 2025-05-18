@@ -14,9 +14,9 @@ def generate_answer(question, context):
     prompt = f"Context: {context}\n\nQuestion: {question}\nAnswer:"
     
     response = co.generate(
-        model='command-xlarge-nightly',
+        model='command-light',
         prompt=prompt,
-        max_tokens=10,
+        max_tokens=20,
         temperature=0.5,
         k=0,
         stop_sequences=["\n"]
