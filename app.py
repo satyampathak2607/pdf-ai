@@ -16,7 +16,7 @@ def generate_answer(question, context):
     response = co.generate(
         model='command-xlarge-nightly',
         prompt=prompt,
-        max_tokens=150,
+        max_tokens=10,
         temperature=0.5,
         k=0,
         stop_sequences=["\n"]
