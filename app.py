@@ -55,7 +55,7 @@ model = load_model()
 
            
 
-#streamlit ui
+
 
 st.title("PDF TO AI Chatbot")
 uploaded_file = st.file_uploader("Choose a PDF file", type=["pdf"])
