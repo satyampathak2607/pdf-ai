@@ -66,7 +66,7 @@ if uploaded_file is not None:
     text= extract_text_from_pdf(uploaded_file)
 
     st.subheader("Extracted Text:")
-    st.write(text[:3000])
+    st.write(text[:9000])
     
 
     chunks = chunk_text(text)
